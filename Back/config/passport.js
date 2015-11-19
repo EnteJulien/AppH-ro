@@ -1,5 +1,5 @@
 /* --------------------------------------------- *\
-					PASSPORT
+                    PASSPORT
 \* --------------------------------------------- */
 
 var passport		= require('passport');
@@ -18,17 +18,17 @@ module.exports = function () {
 
 
   passport.use(new LocalStrategy(
-	{
-		usernameField: 'name',
-		passwordField: 'password'
-	},
-	function(name, password, done) {
-		User.find(name, password, function(err, user){
-			if (user === null)
-				return done(null, false, {message: "Identifiant et/ou mot de passe incorrecte"});
-			else
-				return done(null, user);
-		});
-	}));
+    {
+        usernameField: 'name',
+        passwordField: 'password'
+    },
+    function(name, password, done) {
+        User.find(name, password, function(err, user){
+            if (user === null)
+                return done(null, false, {message: "Identifiant et/ou mot de passe incorrecte"});
+            else
+                return done(null, user);
+        });
+    }));
 
 };

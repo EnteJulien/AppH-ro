@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------- *\
-	 						    DATABASE CONFIG
+                                 DATABASE CONFIG
 \* ------------------------------------------------------------------------- */
 
 var mongoose = require('mongoose');
 
-module.exports = mongoose.connect('mongodb://localhost/todos_mean');
+module.exports = mongoose.connect('mongodb://localhost/apero');
