@@ -42,8 +42,7 @@ var Apero = {
             description: req.body.description,
             price: req.body.price,
             dresscode: req.body.dresscode,
-            organizer: req.body.organizer._id,
-            participant: req.body.paticipant._id
+            organizer: req.body.organizer
         }, function(err, apero) {
             res.json(apero);
         });
