@@ -1,10 +1,38 @@
+function config($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/connect.html',
+            controller: 'connectController',
+        })
+        .when('/login', {
+            templateUrl: 'views/connect.html',
+            controller: 'connectController'
+        })
+        .when('/admin', {
+            templateUrl: 'views/admin.html',
+            controller: 'adminController',
+            /*resolve: {
+                administrator: checkIsAdmin,
+                connected: checkIsConnected
+            }*/
+        })
+        .when('/aperoList', {
+            templateUrl: 'views/aperoList.html'
+        })
+        .when('/lambda', {
+            templateUrl: 'views/lambda.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+}
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-function config($ionicPlatform) {
+function run($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
@@ -26,4 +54,12 @@ function config($ionicPlatform) {
 
 
 angular.module('starter', ['ionic'])
-    .run(config);
+    .config(config)
+            /*Controleurs*/
+    .controller('adminController', adminController)
+    .controller('aperolistController', aperolistController)
+    .controller('connectController', connectController)
+    .controller('creationaperoController', creationaperoController)
+    .controller('lambdaController', lambdaController)
+            /*Services*/
+    .run(run);
