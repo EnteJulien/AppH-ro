@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
   
       .state('tab.apero', {
-      url: '/apero',
+      url: '/aperoList/apero',
       views: {
         'tab-aperoList': {
           templateUrl: 'templates/apero.html',
