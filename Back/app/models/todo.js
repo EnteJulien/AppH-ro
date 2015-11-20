@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------- *\
-	 							MODEL TODO
+                                 MODEL TODO
 \* ------------------------------------------------------------------------- */
 
 
@@ -12,42 +12,42 @@ var todoSchema = new mongoose.Schema({
 });
 
 var Todo = {
-    
+
     model: mongoose.model('Todo', todoSchema),
-    
+
     create: function(req, res) {
-		Todo.model.create({
-			description: req.body.description,
-			user_id: req.headers.userid
-		}, function(){
-			res.sendStatus(200);
-		})
-	},
-
-	findAll: function(req, res) {
-		Todo.model.find({
+        Todo.model.create({
+            description: req.body.description,
             user_id: req.headers.userid
-		}, function (err, data) {
-			res.json(data);
-		});
-	},
+        }, function(){
+            res.sendStatus(200);
+        })
+    },
 
-	update: function(req, res){
-		Todo.model.findByIdAndUpdate(req.params.id, {
-			description: req.body.description
-		}, function(){
-			res.sendStatus(200);
-		})
-	},
+    findAll: function(req, res) {
+        Todo.model.find({
+            user_id: req.headers.userid
+        }, function (err, data) {
+            res.json(data);
+        });
+    },
 
-	delete: function(req, res){
-		Todo.model.findByIdAndRemove(req.params.id, function(){
-			res.sendStatus(200);
-		})
-	}
+    update: function(req, res){
+        Todo.model.findByIdAndUpdate(req.params.id, {
+            description: req.body.description
+        }, function(){
+            res.sendStatus(200);
+        })
+    },
 
-    
-    
+    delete: function(req, res){
+        Todo.model.findByIdAndRemove(req.params.id, function(){
+            res.sendStatus(200);
+        })
+    }
+
+
+
 }
 
 module.exports = Todo;

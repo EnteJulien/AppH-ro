@@ -14,7 +14,10 @@ var aperoSchema = new mongoose.Schema({
     withParticipationOf: [{
         type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-        payed: Boolean
+        payed: Boolean,
+        drinker: Boolean,
+        eater: Boolean,
+        both: Boolean
     }],
 });
 
