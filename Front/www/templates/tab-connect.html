@@ -1,0 +1,18 @@
+<ion-view view-title="Se connecter">
+    <ion-content>
+
+       <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Nom</span>
+            <input type="text" ng-model="data.formName">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Mot de passe</span>
+            <input type="password" ng-model="formPassword">
+          </label>
+            <div class="padding">
+                <button class="button button-block button-royal" ng-click="send()">Envoyer</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
