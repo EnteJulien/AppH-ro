@@ -59,9 +59,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  
 
-  
+
+
      .state('tab.aperoList', {
       url: '/aperoList',
       views: {
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  
+
       .state('tab.apero', {
       url: '/aperoList/apero',
       views: {
@@ -81,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  
+
     .state('tab.profil', {
       url: '/profil',
       views: {
